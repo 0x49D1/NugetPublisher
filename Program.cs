@@ -14,7 +14,7 @@ namespace NugetPublish
             string host = Environment.GetEnvironmentVariable("NugetHost");
             string packagePattern = Environment.GetEnvironmentVariable("RegexPatternOfPackages");
             if (string.IsNullOrEmpty(apiKey))
-                throw new Exception("NugetApiKey is not set");
+                throw new Exception("NugetApiKey is not set. Recheck that you have `.env.nugetpublisher` env file somewhere near the executable");
             if (string.IsNullOrEmpty(host))
                 throw new Exception("NugetHost is not set");
             if (string.IsNullOrEmpty(packagePattern))
