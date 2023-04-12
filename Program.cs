@@ -1,5 +1,4 @@
 ﻿// Go to all subdirectories of current directory and find all latest versions of files with extension .nupkg. After finding - try to publish to nuget server: https://nuget.nugios.services/v3/index.json. PAT is: test
-
 using System.Diagnostics;
 using System.Text.RegularExpressions;
 
@@ -26,7 +25,6 @@ namespace NugetPublish
                 .GroupBy(f => Path.GetFileNameWithoutExtension(f.Name).TrimEnd("0123456789.".ToCharArray()), (name, fileInfos) => fileInfos.OrderByDescending(f => f.LastWriteTime).First());
 
             Console.WriteLine("Found files: " + files.Count());
-            // write regex to match only strings with word "bin" in them
 
             foreach (var file in files)
             {
