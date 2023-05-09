@@ -1,4 +1,4 @@
-﻿// Go to all subdirectories of current directory and find all latest versions of files with extension .nupkg. After finding - try to publish to nuget server: https://nuget.nugios.services/v3/index.json. PAT is: test
+﻿// Go to all subdirectories of current directory and find all latest versions of files with extension .nupkg. After finding - try to publish to your nuget server. PAT is: test
 using System.Diagnostics;
 using System.Text.RegularExpressions;
 
@@ -30,7 +30,7 @@ namespace NugetPublish
             {
                 if (!Regex.IsMatch(file.ToString(), packagePattern) || file.ToString().Contains("packages")) // probably was not packed by us
                 {
-                    Console.WriteLine("Project is not Nugios.* Skipping...");
+                    Console.WriteLine("Project is not to be procese.* Skipping...");
                     continue;
                 }
 
